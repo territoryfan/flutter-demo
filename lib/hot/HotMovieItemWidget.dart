@@ -1,6 +1,6 @@
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'HotMovieData.dart';
-
 class HotMovieItemWidget extends StatefulWidget {
   HotMovieData hotMovieData;
 
@@ -22,8 +22,8 @@ class HotMovieItemWidgetState extends State<HotMovieItemWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Image.network(
-            // widget.hotMovieData.images,
-            'https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p42588.webp',
+            widget.hotMovieData.images.medium,
+            // 'https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p42588.webp',
             width: 80,
             height: 120,
             fit: BoxFit.cover,
