@@ -1,4 +1,3 @@
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'HotMovieData.dart';
 class HotMovieItemWidget extends StatefulWidget {
@@ -41,12 +40,12 @@ class HotMovieItemWidgetState extends State<HotMovieItemWidget> {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
                   Text(
-                    widget.hotMovieData.rating.toString(),
+                    widget.hotMovieData.rating.average.toString(),
                     style: TextStyle(fontSize: 14, color: Colors.black54),
                   ),
-                  Text('导3演: ',
+                  Text('导演: '+widget.hotMovieData.directors[0].name,
                       style: TextStyle(fontSize: 14, color: Colors.black54)),
-                  Text('主演: ',
+                  Text('主演: '+widget.hotMovieData.casts[0].name,
                       style: TextStyle(fontSize: 14, color: Colors.black54)),
                 ],
               ),
@@ -57,7 +56,7 @@ class HotMovieItemWidgetState extends State<HotMovieItemWidget> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('人看过',style: TextStyle(color: Colors.red,fontSize: 14),),
+                Text(widget.hotMovieData.collectCount.toString() + '人看过',style: TextStyle(color: Colors.red,fontSize: 14),),
                 OutlineButton(
                   child: Text('购票',style: TextStyle(fontSize: 16),),
                   color: Colors.red,
